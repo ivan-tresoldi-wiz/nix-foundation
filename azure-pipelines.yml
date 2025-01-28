@@ -10,7 +10,6 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  - group: "Wiz Credentials"
   - name: image_repo
     value: nix-foundation
   - name: image_tag
@@ -43,10 +42,10 @@ steps:
 
   - task: wiz@0
     inputs:
-      command: "image"
-      clientid: "$(WIZ_CLIENT_ID)"
-      secret: "$(WIZ_CLIENT_SECRET)"
-      image: "$(image_repo):$(image_tag)"
+      command: 'image'
+      clientid: '$(WIZ_CLIENT_ID)'
+      secret: '$(WIZ_CLIENT_SECRET)'
+      succeedOnFailures: true
+      image: '$(image_repo):$(image_tag)'
       policyHitsOnly: true
       sensitiveData: true
-      succeedOnFailures: true
