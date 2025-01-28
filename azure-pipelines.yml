@@ -50,3 +50,5 @@ steps:
       policyHitsOnly: true
       sensitiveData: true
       succeedOnFailures: true
+      driver: 'mountWithLayers'  
+      sudo: true
